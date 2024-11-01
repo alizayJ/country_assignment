@@ -1,5 +1,5 @@
-export default function CountryName({params}:any) {
-let country_data:{
+export default function CountryName({params}:{params: {country_name: string}}) {
+const country_data:{
     name:string,
     population:string,
     capital:string
@@ -33,7 +33,7 @@ function getData(url: string){
  return country_data.find((properties)=> url.toLowerCase() == properties.name.toLowerCase())
  }
 
-let result = getData(params.country_name);
+const result = getData(params.country_name);
 
 
  
